@@ -1,8 +1,162 @@
+
+## introduce node.js and Express.
+ #what is node.js, what can it do? what can’t it do?
+ node is what enables js to be developed outside of the browser and larger program languages such as c++ Jave Python ect.
+ Some of the advantages of using node.js is the ability to use it on server side and removes the requirements of swithchin between front end and back end programming. Node is far more efficient in its lack of complexity and its adaptability.
+
+ In addition, Node.js runs Asynchronous allowing for more robust programs on the end users proccessor side. Npm modules are available to implement repetitive task enabling developers to focus on more complex tasks. 
+
+
+ # what is Express? why use it?
+ # relationship between Express and node.js.
+
+
+# see a high level overview of the main features of Express.
+#learn how to manually test our Web API using a tool called Postman.services.
+#create our first CRUD Web API.
+
+## At the end of this module, you should be able to:
+   #explain what Node.js is and it's core features.
+    node is what enables js to be developed outside of the browser and larger program languages such as c++ Jave Python ect.
+ Some of the advantages of using node.js is the ability to use it on server side and removes the requirements of swithchin between front end and back end programming. Node is far more efficient in its lack of complexity and its adaptability.
+
+ In addition, Node.js runs Asynchronous allowing for more robust programs on the end users proccessor side. Npm modules are available to implement repetitive task enabling developers to focus on more complex tasks. 
+
+ # disadvantages
+It run Javascript on the server and can be difficult and rescource intesive to us different tools that are not js enabled
+Javascript is single threaded and cannot implement or tale advantage of multiple threads on the server.
+
+Developers whom are not js savvy or compatible may be challenged by its asycrhounous flow where most languages readily available require a syncrouhnous style developnent,
+
+having the vast amounts of available npm registies security vulnerabilities could arise and understanding dependencies to the inexperieced devaloper could be cumbersome. 
+
+
+#useage
+
+Node can be developed inside the terminal. with this you use the console object of the terminal rather than the window object of the browser. Both are javascript objects. There are several features not available on the terminal object such as Alert() and several others. 
+
+# a simple server with Node
+
+sub objectives 
+
+use Node's http module diminish the need for complex network operations. 
+
+write a single request handler function that will handle all request. 
+
+The request handlers receives request of action from the client and responds 
+
+The handler takes in two arguments an object for requisition and an object and one representing a responce.
+
+// server? What is a server?
+// The server is a place on a computer that is listening for traffic and when it receives that traffic it knows what to do with said traffic
+
+// server? What is a server?
+// The server is a place on a computer that is listening for traffic and when it receives that traffic it knows what to do with said traffic
+
+const http = require ('http');
+// this in es6 can be an import statement but in order to remain compatible we are using the require syntax.
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = http.createServer((req, res)=>{
+  res.statusCode = 200;
+  res.setHeader("Content-Type",'text/plain');
+  res.end('Hello World, from NodeJS')
+
+})
+
+server.listen (port, hostname, () => {
+  console.log(`server listening on http://${hostname}:${port}`);
+});
+
+// req will be the request object that comes to the server and res will be its response
+
+   #explain what Express is and it's core features.
+Express is a JS framework that sits on top of Nodejs Web Server and on top of the raw http module provided by the Node.js.
+
+Its essentially like react is with js on front end except it applies to the back end.
+
+Adds functionalities similarily to dependencies in react such as eloquent API, Middleware support and Routing.
+
+It allows developers to implement actions that would have typically required massive amounts of code in trivial unoppinionated packages. 
+
+Express functionality includes 
+
+serving single page application, building Restful web services that is functional with JSON ( majority of what will be covered here at lambda involves implementation of this key feature). 
+
+Serves static content such as files pdfs Html among other things.
+
+Express is used to implement real-time functionalities in applications with technologies and dependencies such as Web Sockets and WebRTC. 
+
+# Some key functionalities and uses of Express
+
+They are functions that get request and responses and can perform operations on them through multiple functions like a stack or array. An example is authentication before responding to request with priviledged data. Middleware can but is not required to change request and response based upon criteria. 
+
+Routing is a way to select a request based upon the http method and url used by the request. This gives developers the ability to compartmentalize an application by terms of routers. For example one route could handle authentication and another data (SPA and API )
+
+# Express Convenience Helpers 
+
+These are features that come ready to implement and are extention methods added to the request and response objects.
+some of helpers found in these objects ar methods such as response.redirect(), response.status(), response.send(),request.ip.
+
+# express Views 
+
+Express can provide ways to dynamically render HTML on the server using different languages that render to the users request. 
+
+# 3rd video notes 
+Agenda 
+
+Add Express to a node.js App
+Use Express to create a web Api
+Add endpoints that can respond to get request
+Return json and correct http status codes
+
+Api is a server software that provides endpoints that can be used by clients to manage resources.
+
+an endpoints are the contacts wich make communication possible. In web applications the url is the reference to the location of data on a server. 
+
+resources are the things application care about such as users products orders clients and returns
+
+
+
+
+   #create an API that can respond to GET requests.
+
+// The '/' slash in the get request is the root of out api 
+// This function is often refferred to and understood as the request handler function and can be in es6 arrow or plain function format
+ as noted earlier the first paramatar is a request object that is being passed in.
+
+
+server.get('/', (req, res) =>{
+res.send('Hello world from express!');
+});
+
+ functionality can be verified by going to the port in the computers browser for example port 5000 can be viewed by entering http://localhost:5000/
+
+ when dependencies or yarn add express is implemented several assets are added one of which is 
+  "server": "nodemon index.js" this allows for saves to be updated realtime rather than stopping and restarting the server. 
+
+
+   #use postman to manually test Web APIs.
+Postman is a client that can be used as a tool to test api's
+It is a flexible gui that gives developers the abilities to test api's in ways a developing app may not be able too.
+
+
 # Building RESTful APIs with Node.js and Express Mini
+// implement your API here
+const express = require ('express');
+// this is the equivilant in importing a package similar to react. 
+const server = express();
+// by calling express and assigning it to server it creates a server that is powered by express.
+
+
 
 ## Topics
 
 - Building a RESTful API.
+
+
 - Performing CRUD operations.
 - Writing API endpoints.
 
